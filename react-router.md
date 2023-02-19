@@ -1,110 +1,124 @@
 # React Router Dom
 
+- [React Router Dom](#react-router-dom)
+  - [Installation](#installation)
+  - [Features](#features)
+    - [`BrowserRouter` --component](#browserrouter---component)
+    - [`Routes` --component](#routes---component)
+    - [`Route` --component](#route---component)
+      - [`INDEX ROUTE`](#index-route)
+    - [`Link` --component](#link---component)
+    - [`NavLink` --component](#navlink---component)
+    - [`Outlet` --component](#outlet---component)
+    - [`useNavigate` --hook](#usenavigate---hook)
+    - [`useParams` --hook](#useparams---hook)
+  - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
+
 ## Installation
 
 ```bash
 npm install react-router-dom@6
 ```
 
-### Features
+## Features
 
-- `BrowserRouter` --component
+### `BrowserRouter` --component
 
-  - wraps the parent component so that react router can work in it and it's children.
+- wraps the parent component so that react router can work in it and it's children.
 
-  ```jsx
-  <BrowserRouter>// will be available to all the children</BrowserRouter>
-  ```
+```jsx
+<BrowserRouter>// will be available to all the children</BrowserRouter>
+```
 
-- `Routes` --component
+### `Routes` --component
 
-  - contains multiple `Route` components.
+- contains multiple `Route` components.
 
-  ```jsx
-  <Routes>
-    // Route 1
-    <Route path="/" element={<Home />} />
-    // Route 2
-    <Route path="/about" element={<About />} />
-    // Route . . .
-  </Routes>
-  ```
-
-- `Route` --component
-
-  - must be inside of a `Routes` component
-  - two main props: `path` - the path to match and `element` - the component to render when the path matches
-  - can be nested inside of another `Route` component to create nested routes
-
-  ```jsx
+```jsx
+<Routes>
+  // Route 1
   <Route path="/" element={<Home />} />
+  // Route 2
   <Route path="/about" element={<About />} />
-  ```
+  // Route . . .
+</Routes>
+```
 
-  - `INDEX ROUTE`
+### `Route` --component
 
-    - if we want a child route to be rendered at parent url then we can use indexed route
+- must be inside of a `Routes` component
+- two main props: `path` - the path to match and `element` - the component to render when the path matches
+- can be nested inside of another `Route` component to create nested routes
 
-  ```jsx
-  <Route>
-    <Route path="products" element={<Products />}>
-      // will be rendered at /products
-      <Route index element={<FeaturedProducts />} />
+```jsx
+<Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+```
 
-      <Route path="featured" element={<FeaturedProducts />} />
-      <Route path="new" element={<NewProducts />} />
-    </Route>
-  ```
+#### `INDEX ROUTE`
 
-- `Link` --component
+- if we want a child route to be rendered at parent url then we can use indexed route
 
-  - substitutes for `a` tag. `a` tag reloads the page but `Link` doesn't.
-  - it's main props include `to` the path to navigate to.
+```jsx
+<Route>
+  <Route path="products" element={<Products />}>
+    // will be rendered at /products
+    <Route index element={<FeaturedProducts />} />
 
-  ```jsx
-  <Link to="/about">About</Link>
-  <Link to="about">About</Link>
-  ```
+    <Route path="featured" element={<FeaturedProducts />} />
+    <Route path="new" element={<NewProducts />} />
+  </Route>
+```
 
-  - both are different things as the first one will match the path exactly from the root and the second one will add the path to the current path.
+### `Link` --component
 
-- `NavLink` --component
+- substitutes for `a` tag. `a` tag reloads the page but `Link` doesn't.
+- it's main props include `to` the path to navigate to.
 
-  - Similar to `Link` but it add an `active` class when the path matches thus allowing for styling
-  - specially meant for navigation links in the navigation bar.
-  - > props includes `style`. we can pass a function to the style, then destructure the `isActive` prop and the we can apply objectified style to the `Link` component on the basis of it.
+```jsx
+<Link to="/about">About</Link>
+<Link to="about">About</Link>
+```
 
-- `useNavigate` --hook
+- both are different things as the first one will match the path exactly from the root and the second one will add the path to the current path.
 
-  - a hook provided by react router dom to do programmatic routing, first initiate it in the component and then use it's instance to navigate to a path.
+### `NavLink` --component
 
-  ```jsx
-  const navigate = useNavigate();
+- Similar to `Link` but it add an `active` class when the path matches thus allowing for styling
+- specially meant for navigation links in the navigation bar.
+- > props includes `style`. we can pass a function to the style, then destructure the `isActive` prop and the we can apply objectified style to the `Link` component on the basis of it.
 
-  const handleClick = () => {
-    navigate("/path");
-  };
-  ```
+### `Outlet` --component
 
-  - > `navigate(-1)` will go back to the previous page.
-  - see more at [useNavigate](https://reactrouter.com/en/6.8.1/hooks/use-navigate)
+- // TODO - give the space for rendering child components ?
 
-- `Outlet` --component
+### `useNavigate` --hook
 
-  - // TODO - give the space for rendering child components ?
+- a hook provided by react router dom to do programmatic routing, first initiate it in the component and then use it's instance to navigate to a path.
 
-- `useParams` --hook
+```jsx
+const navigate = useNavigate();
 
-  - a hook provided by react router dom to get the params from the url.
-  - it returns an object with the params as key value pairs.
+const handleClick = () => {
+  navigate("/path");
+};
+```
 
-  ```jsx
-  const { id } = useParams();
-  ```
+- > `navigate(-1)` will go back to the previous page.
+- see more at [useNavigate](https://reactrouter.com/en/6.8.1/hooks/use-navigate)
+
+### `useParams` --hook
+
+- a hook provided by react router dom to get the params from the url.
+- it returns an object with the params as key value pairs.
+
+```jsx
+const { id } = useParams();
+```
 
 ---
 
-### Tips, Tricks and Gotchas
+## Tips, Tricks and Gotchas
 
 > configuring a default route
 
