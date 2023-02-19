@@ -30,9 +30,20 @@ npm install react-router-dom@6
   </Routes>
   ```
 
+- `Route` --component
+
+  - must be inside of a `Routes` component
+  - two main props: `path` - the path to match and `element` - the component to render when the path matches
+  - can be nested inside of another `Route` component to create nested routes
+
+  ```jsx
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  ```
+
   - `INDEX ROUTE`
 
-    - if we want a child route to be rendered at parent level then we can use index route
+    - if we want a child route to be rendered at parent url then we can use indexed route
 
   ```jsx
   <Route>
@@ -43,17 +54,6 @@ npm install react-router-dom@6
       <Route path="featured" element={<FeaturedProducts />} />
       <Route path="new" element={<NewProducts />} />
     </Route>
-  ```
-
-- `Route` --component
-
-  - must be inside of a `Routes` component
-  - two main props: `path` - the path to match and `element` - the component to render when the path matches
-  - can be nested inside of another `Route` component to create nested routes
-
-  ```jsx
-  <Route path="/" element={<Home />} />
-  <Route path="/about" element={<About />} />
   ```
 
 - `Link` --component
@@ -105,4 +105,16 @@ npm install react-router-dom@6
 
 - in the paths add a `path="*"` and then add a `element` prop with the component to render when no match is found.
 
----
+> dynamic routes
+
+- we can make a route dynamic by adding a `:` before the name of individual route.
+- dynamic routes can be nested.
+
+  ```jsx
+  <Route path="/products/:id" element={<Product />} />
+  <Route path="/products/relevent" element={<ReleventProduct />} />
+  ```
+
+- `:id` can be of any type, a string as well as a number
+- react router tries to match a specific route first and then tries to match a dynamic route.
+- for example - react router is smart enough to render `<ReleventProduct />` component when the path is `/products/relevent` and `<Product />` component when the path is `/products/1` or `/products/2` or `/products/3` etc.
