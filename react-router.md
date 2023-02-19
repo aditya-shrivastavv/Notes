@@ -93,6 +93,15 @@ npm install react-router-dom@6
 
   - // TODO - give the space for rendering child components ?
 
+- `useParams` --hook
+
+  - a hook provided by react router dom to get the params from the url.
+  - it returns an object with the params as key value pairs.
+
+  ```jsx
+  const { id } = useParams();
+  ```
+
 ---
 
 ### Tips, Tricks and Gotchas
