@@ -33,7 +33,7 @@ npm install react-router-dom@6
 - wraps the parent component so that react router can work in it and it's children.
 
 ```jsx
-<BrowserRouter>// will be available to all the children</BrowserRouter>
+<BrowserRouter>/* will be available to all the children */</BrowserRouter>
 ```
 
 ### `Routes` --component
