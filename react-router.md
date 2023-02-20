@@ -6,7 +6,7 @@
     - [`BrowserRouter` --component ↑](#browserrouter---component-)
     - [`Routes` --component ↑](#routes---component-)
     - [`Route` --component ↑](#route---component-)
-      - [`INDEX ROUTE`](#index-route)
+      - [INDEX ROUTE](#index-route)
     - [`Link` --component ↑](#link---component-)
     - [`NavLink` --component ↑](#navlink---component-)
     - [`Outlet` --component ↑](#outlet---component-)
@@ -61,7 +61,7 @@ npm install react-router-dom@6
 <Route path="/about" element={<About />} />
 ```
 
-#### `INDEX ROUTE`
+#### INDEX ROUTE
 
 - if we want a child route to be rendered at parent url then we can use indexed route
 
