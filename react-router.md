@@ -10,9 +10,14 @@
     - [`Link` --component](#link---component)
     - [`NavLink` --component](#navlink---component)
     - [`Outlet` --component](#outlet---component)
+    - [`React.lazy` --function](#reactlazy---function)
     - [`useNavigate` --hook](#usenavigate---hook)
     - [`useParams` --hook](#useparams---hook)
+    - [`useSearchParams` --hook](#usesearchparams---hook)
   - [Tips, Tricks and Gotchas](#tips-tricks-and-gotchas)
+    - [configuring a default route](#configuring-a-default-route)
+    - [configuring a no match route](#configuring-a-no-match-route)
+    - [dynamic routes](#dynamic-routes)
 
 ## Installation
 
@@ -80,17 +85,40 @@ npm install react-router-dom@6
 <Link to="about">About</Link>
 ```
 
-- both are different things as the first one will match the path exactly from the root and the second one will add the path to the current path.
+- both are different things as the first (absolute link) one will match the path exactly from the root and the second one (relative link)will add the path to the current path.
 
 ### `NavLink` --component
 
 - Similar to `Link` but it add an `active` class when the path matches thus allowing for styling
 - specially meant for navigation links in the navigation bar.
-- > props includes `style`. we can pass a function to the style, then destructure the `isActive` prop and the we can apply objectified style to the `Link` component on the basis of it.
+
+> props includes `style`. we can pass a function to the style, then destructure the `isActive` prop and the we can apply objectified style to the `Link` component on the basis of it.
 
 ### `Outlet` --component
 
-- // TODO - give the space for rendering child components ?
+- should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route.
+
+### `React.lazy` --function
+
+- a function provided by react to lazy load components.
+
+```jsx
+import React from "react";
+const lazyPage = React.lazy(() => import("./LazyPage"));
+.
+.
+<Route path="about" element={
+  <React.Suspense fallback="Loading . . . . ">
+    <lazyPage />
+  </React.Suspense>
+}/>
+```
+
+- while a lazy component is loading, it needs a fallback component to show.
+
+```jsx
+
+```
 
 ### `useNavigate` --hook
 
@@ -104,7 +132,8 @@ const handleClick = () => {
 };
 ```
 
-- > `navigate(-1)` will go back to the previous page.
+> `navigate(-1)` will go back to the previous page.
+
 - see more at [useNavigate](https://reactrouter.com/en/6.8.1/hooks/use-navigate)
 
 ### `useParams` --hook
@@ -116,19 +145,31 @@ const handleClick = () => {
 const { id } = useParams();
 ```
 
+### `useSearchParams` --hook
+
+- a hook provided by react router dom to get and set the search params from the url.
+- it works similar to `useState` hook but, it works with the search params of the url.
+
+```jsx
+const [searchParams, setSearchParams] = useSearchParams();
+```
+
+- `.get` is a method to first value associated to the given search parameter.
+- `.getAll` is a method to get all the values associated to the given search parameter.
+
 ---
 
 ## Tips, Tricks and Gotchas
 
-> configuring a default route
+### configuring a default route
 
 - in the paths add a `path="/"` and then add a `element` prop with the component to render when no match is found.
 
-> configuring a no match route
+### configuring a no match route
 
 - in the paths add a `path="*"` and then add a `element` prop with the component to render when no match is found.
 
-> dynamic routes
+### dynamic routes
 
 - we can make a route dynamic by adding a `:` before the name of individual route.
 - dynamic routes can be nested.
