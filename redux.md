@@ -10,6 +10,7 @@
   - [Redux Flow ↑](#redux-flow-)
     - [Action ↑](#action-)
     - [Reducer ↑](#reducer-)
+    - [Store ↑](#store-)
 
 **Redux** is a _predictable_ _state_ _container_ for JavaScript apps. It makes **state management** simple and scalable. It is a great tool for managing state in a React application. It doesn't only works with React it can be used with any other JavaScript framework or library.
 
@@ -22,6 +23,15 @@ It is sometimes hard to use redux directly in our react application that's why w
 ```bash
 npm i redux            #plain redux
 npm i react-redux      #redux for react
+```
+
+Usage -
+
+```js
+// in es6 modules
+import redux from "redux";
+// in commonjs/nodejs
+const redux = require("redux");
 ```
 
 ## Three Core Concepts of Redux [↑](#redux)
@@ -121,3 +131,15 @@ const reducer = (state = initialState, action) => {
 ```
 
 we are not allowed to mutate the state directly. We have to return a new state object. We can use the spread operator to copy the properties of the previous state into a new object.
+
+### Store [↑](#redux)
+
+One store for the entire application
+
+It's Responsibilities -
+
+- Holds application state
+- Allows access to state via `getState()`
+- Allows state to be updated via `dispatch(action)`
+- Registers listeners via `subscribe(listener)`
+- Handles unregistering of listeners via the function returned by `subscribe(listener)`
