@@ -18,6 +18,7 @@
     - [configuring a default route](#configuring-a-default-route)
     - [configuring a no match route](#configuring-a-no-match-route)
     - [dynamic routes](#dynamic-routes)
+    - [authentication and protected routes](#authentication-and-protected-routes)
 
 ## Installation
 
@@ -101,6 +102,7 @@ npm install react-router-dom@6
 ### `React.lazy` --function
 
 - a function provided by react to lazy load components.
+- while a lazy component is loading, it needs a fallback component to show.
 
 ```jsx
 import React from "react";
@@ -112,12 +114,6 @@ const lazyPage = React.lazy(() => import("./LazyPage"));
     <lazyPage />
   </React.Suspense>
 }/>
-```
-
-- while a lazy component is loading, it needs a fallback component to show.
-
-```jsx
-
 ```
 
 ### `useNavigate` --hook
@@ -182,3 +178,7 @@ const [searchParams, setSearchParams] = useSearchParams();
 - `:id` can be of any type, a string as well as a number
 - react router tries to match a specific route first and then tries to match a dynamic route.
 - for example - react router is smart enough to render `<ReleventProduct />` component when the path is `/products/relevent` and `<Product />` component when the path is `/products/1` or `/products/2` or `/products/3` etc.
+
+### authentication and protected routes
+
+- yet to learn...
