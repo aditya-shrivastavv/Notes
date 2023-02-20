@@ -4,12 +4,11 @@
   - [Installation ↑](#installation-)
   - [Three Core Concepts of Redux ↑](#three-core-concepts-of-redux-)
   - [Three Principles of Redux ↑](#three-principles-of-redux-)
-    - [1. The State of your Whole Application is stored in an Object Tree within a Single Store](#1-the-state-of-your-whole-application-is-stored-in-an-object-tree-within-a-single-store)
-    - [2. The only way to change the state is to emit an Action, an Object describing what happened](#2-the-only-way-to-change-the-state-is-to-emit-an-action-an-object-describing-what-happened)
-    - [3. To specify how the state tree is transformed by actions, you write pure Reducers](#3-to-specify-how-the-state-tree-is-transformed-by-actions-you-write-pure-reducers)
+    - [1. The State of your Whole Application is stored in an Object Tree within a Single Store ↑](#1-the-state-of-your-whole-application-is-stored-in-an-object-tree-within-a-single-store-)
+    - [2. The only way to change the state is to emit an Action, an Object describing what happened ↑](#2-the-only-way-to-change-the-state-is-to-emit-an-action-an-object-describing-what-happened-)
+    - [3. To specify how the state tree is transformed by actions, you write pure Reducers ↑](#3-to-specify-how-the-state-tree-is-transformed-by-actions-you-write-pure-reducers-)
   - [Redux Flow ↑](#redux-flow-)
     - [Action ↑](#action-)
-      - [Action Creators ↑](#action-creators-)
     - [Reducer ↑](#reducer-)
 
 **Redux** is a _predictable_ _state_ _container_ for JavaScript apps. It makes **state management** simple and scalable. It is a great tool for managing state in a React application. It doesn't only works with React it can be used with any other JavaScript framework or library.
@@ -35,7 +34,7 @@ npm i react-redux      #redux for react
 
 ## Three Principles of Redux [↑](#redux)
 
-### 1. The State of your Whole Application is stored in an Object Tree within a Single Store
+### 1. The State of your Whole Application is stored in an Object Tree within a Single Store [↑](#redux)
 
 Maintain our application state in a single object which would be managed by redux store.
 
@@ -47,7 +46,7 @@ Maintain our application state in a single object which would be managed by redu
 }
 ```
 
-### 2. The only way to change the state is to emit an Action, an Object describing what happened
+### 2. The only way to change the state is to emit an Action, an Object describing what happened [↑](#redux)
 
 To update the state of your app, you need to let redux know about that with an action.
 Not allowed to directly update the state of the store.
@@ -60,7 +59,7 @@ Not allowed to directly update the state of the store.
 
 First let the shopkeeper know that you want to buy a cake. Then the shopkeeper will update the state of the store.
 
-### 3. To specify how the state tree is transformed by actions, you write pure Reducers
+### 3. To specify how the state tree is transformed by actions, you write pure Reducers [↑](#redux)
 
 A reducer is a function that takes the current state and an action as arguments, and returns a new state result.
 
@@ -86,7 +85,7 @@ const BUY_CAKE = "BUY_CAKE";
 
 This is an action, that's it. **An action is just a plain JavaScript object that has a type property**. The type property describes the kind of action that is being performed. The type property is usually defined as a string constant. It's a good practice to define action types as string constants. Because string constants are easier to misspell than variables, and string constants are easier to reuse.
 
-#### Action Creators [↑](#redux)
+> Action Creators
 
 Action creators are functions that returns an action.
 
