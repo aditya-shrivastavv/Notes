@@ -2,6 +2,12 @@
 
 what's the difference between `var`, `let` and `const`?
 
+- [var, let \& const](#var-let--const)
+  - [`var`](#var)
+    - [`var` the **PROBLEM**: var is not block scoped, its only **function** scoped](#var-the-problem-var-is-not-block-scoped-its-only-function-scoped)
+  - [`let`](#let)
+  - [`const`](#const)
+
 ## `var`
 
 - `var` is **function** scoped
