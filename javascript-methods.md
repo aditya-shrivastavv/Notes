@@ -3,17 +3,22 @@
 - [Javascript Methods](#javascript-methods)
   - [String Methods](#string-methods)
     - [`.length`](#length)
-    - [`.slice()` ↑](#slice-)
-    - [`.substring()` ↑](#substring-)
-    - [`.substr()` ↑](#substr-)
-    - [`.replace()` ↑](#replace-)
-    - [`.replaceAll()` ↑](#replaceall-)
-    - [`.toUpperCase()` ↑](#touppercase-)
-    - [`.toLowerCase()` ↑](#tolowercase-)
-    - [`.concat()` ↑](#concat-)
-    - [`.trim()` ↑](#trim-)
-    - [`.trimStart()` ↑](#trimstart-)
-    - [`.trimEnd()` ↑](#trimend-)
+    - [Extracting String Parts](#extracting-string-parts)
+      - [`.slice()` ↑](#slice-)
+      - [`.substring()` ↑](#substring-)
+      - [`.substr()` ↑](#substr-)
+    - [Replacing String Content](#replacing-string-content)
+      - [`.replace()` ↑](#replace-)
+      - [`.replaceAll()` ↑](#replaceall-)
+    - [Upper and Lower Case](#upper-and-lower-case)
+      - [`.toUpperCase()` ↑](#touppercase-)
+      - [`.toLowerCase()` ↑](#tolowercase-)
+    - [Join and Trim](#join-and-trim)
+      - [`.concat()` ↑](#concat-)
+      - [`.trim()` ↑](#trim-)
+      - [`.trimStart()` ↑](#trimstart-)
+      - [`.trimEnd()` ↑](#trimend-)
+    - [String Padding](#string-padding)
 
 ## String Methods
 
@@ -27,7 +32,9 @@ const str = "Hello World";
 console.log(str.length); // 11
 ```
 
-### `.slice()` [↑](#javascript-methods)
+### Extracting String Parts
+
+#### `.slice()` [↑](#javascript-methods)
 
 - `slice()` extracts a part of a string and returns the extracted part in a new string.
 - The method takes 2 parameters: start position, and end position (end not included).
@@ -41,7 +48,7 @@ console.log(s2); // "Hello"
 - If you omit the second parameter, the method will slice out the rest of the string
 - If a parameter is negative, the position is counted from the end of the string
 
-### `.substring()` [↑](#javascript-methods)
+#### `.substring()` [↑](#javascript-methods)
 
 - `substring()` is similar to `slice()`
 - The difference is that start and end values less than 0 are treated as 0 in substring().
@@ -53,7 +60,7 @@ let part = str.substring(7, 13); // "Banana"
 
 - If you omit the second parameter, `substring()` will slice out the rest of the string.
 
-### `.substr()` [↑](#javascript-methods)
+#### `.substr()` [↑](#javascript-methods)
 
 - `substr()` is similar to `slice()`
 - The difference is that the second parameter specifies the **length** of the extracted part
@@ -71,7 +78,9 @@ let str = "Apple, Banana, Kiwi";
 let part = str.substr(-4); // "Kiwi"
 ```
 
-### `.replace()` [↑](#javascript-methods)
+### Replacing String Content
+
+#### `.replace()` [↑](#javascript-methods)
 
 - The `replace()` method replaces a specified value with another value in a string
 
@@ -94,7 +103,7 @@ let newText = text.replace(/MICROSOFT/i, "W3Schools"); // "Please visit W3School
 > 4. The replace() method replaces only the first match
 > 5. If you want to replace all matches, use a regular expression with the /g flag set.
 
-### `.replaceAll()` [↑](#javascript-methods)
+#### `.replaceAll()` [↑](#javascript-methods)
 
 - In 2021, JavaScript introduced the string method `replaceAll()`
 
@@ -113,7 +122,9 @@ text = text.replaceAll(/cats/g, "dogs");
 
 > replaceAll() is an ES2021 feature. It is not supported in Internet Explorer.
 
-### `.toUpperCase()` [↑](#javascript-methods)
+### Upper and Lower Case
+
+#### `.toUpperCase()` [↑](#javascript-methods)
 
 - A string is converted to upper case with `toUpperCase()`
 
@@ -122,7 +133,7 @@ let text1 = "Hello World!";
 let text2 = text1.toUpperCase(); // "HELLO WORLD!"
 ```
 
-### `.toLowerCase()` [↑](#javascript-methods)
+#### `.toLowerCase()` [↑](#javascript-methods)
 
 - A string is converted to lower case with `toLowerCase()`
 
@@ -131,7 +142,9 @@ let text1 = "Hello World!";
 let text2 = text1.toUpperCase(); // "hello world!"
 ```
 
-### `.concat()` [↑](#javascript-methods)
+### Join and Trim
+
+#### `.concat()` [↑](#javascript-methods)
 
 - The `concat()` method is used to join two or more strings
 
@@ -152,7 +165,7 @@ text = "Hello".concat(" ", "World!");
 > Formally said:
 > Strings are immutable: Strings cannot be changed, only replaced.
 
-### `.trim()` [↑](#javascript-methods)
+#### `.trim()` [↑](#javascript-methods)
 
 - The `trim()` method removes whitespace from both sides of a string
 
@@ -161,7 +174,7 @@ let text1 = "      Hello World!      ";
 let text2 = text1.trim(); // "Hello World!"
 ```
 
-### `.trimStart()` [↑](#javascript-methods)
+#### `.trimStart()` [↑](#javascript-methods)
 
 - ECMAScript 2019 added the String method `trimStart()` to JavaScript.
 - The `trimStart()` method works like `trim()`, but removes whitespace only from the start of a string
@@ -172,7 +185,7 @@ let text1 = "     Hello World!     ";
 let text2 = text1.trimStart(); // "Hello World!     "
 ```
 
-### `.trimEnd()` [↑](#javascript-methods)
+#### `.trimEnd()` [↑](#javascript-methods)
 
 - ECMAScript 2019 added the String method `trimEnd()` to JavaScript.
 - The `trimEnd()` method works like `trim()`, but removes whitespace only from the end of a string
@@ -182,3 +195,5 @@ let text2 = text1.trimStart(); // "Hello World!     "
 let text1 = "     Hello World!     ";
 let text2 = text1.trimEnd(); // "     Hello World!"
 ```
+
+### String Padding
