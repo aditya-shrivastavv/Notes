@@ -3,12 +3,12 @@
 what's the difference between `var`, `let` and `const`?
 
 - [var, let \& const](#var-let--const)
-  - [`var`](#var)
-    - [`var` the **PROBLEM**: var is not block scoped, its only **function** scoped](#var-the-problem-var-is-not-block-scoped-its-only-function-scoped)
-  - [`let`](#let)
-  - [`const`](#const)
+  - [`var` ↑](#var-)
+    - [`var` the **PROBLEM** ↑](#var-the-problem-)
+  - [`let` ↑](#let-)
+  - [`const` ↑](#const-)
 
-## `var`
+## `var` [↑](#var-let--const)
 
 - `var` is **function** scoped
 
@@ -44,7 +44,9 @@ console.log(greet); // undefined
 var greet = "say hi";
 ```
 
-### `var` the **PROBLEM**: var is not block scoped, its only **function** scoped
+### `var` the **PROBLEM** [↑](#var-let--const)
+
+- var is not block scoped, its only **function** scoped
 
 ```js
 var greet = "say hi";
@@ -54,7 +56,7 @@ if (true) {
 console.log(greet); // "say Hello instead" // PROBLEM
 ```
 
-## `let`
+## `let` [↑](#var-let--const)
 
 - `let` is **block** scoped
 - we all are used to use this type of scope in other languages
@@ -83,7 +85,7 @@ console.log(greet); // "say Hello instead"
 let greet = "say hi"; // SyntaxError: Identifier 'greet' has already been declared
 ```
 
-## `const`
+## `const` [↑](#var-let--const)
 
 - `const` is same as `let` but it can't be updated or redeclared
 
