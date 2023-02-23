@@ -1,27 +1,27 @@
 # Javascript Number Methods
 
 - [Javascript Number Methods](#javascript-number-methods)
-  - [Common](#common)
-    - [`.toString()`](#tostring)
-    - [`.toExponential()`](#toexponential)
-    - [`.toFixed()`](#tofixed)
-    - [`.toPrecision()`](#toprecision)
-    - [`.valueOf()`](#valueof)
-  - [Type Conversion](#type-conversion)
-    - [`Number()`](#number)
-    - [`parseInt()`](#parseint)
-    - [`parseFloat()`](#parsefloat)
-  - [Number object methods](#number-object-methods)
-    - [`Number.isInteger()`](#numberisinteger)
-    - [`Number.isSafeInteger()`](#numberissafeinteger)
-    - [`Number.isNaN()`](#numberisnan)
-    - [`Number.isFinite()`](#numberisfinite)
-    - [`Number.parseFloat()`](#numberparsefloat)
-    - [`Number.parseInt()`](#numberparseint)
+  - [Common ↑](#common-)
+    - [`.toString()` ↑](#tostring-)
+    - [`.toExponential()` ↑](#toexponential-)
+    - [`.toFixed()` ↑](#tofixed-)
+    - [`.toPrecision()` ↑](#toprecision-)
+    - [`.valueOf()` ↑](#valueof-)
+  - [Type Conversion ↑](#type-conversion-)
+    - [`Number()` ↑](#number-)
+    - [`parseInt()` ↑](#parseint-)
+    - [`parseFloat()` ↑](#parsefloat-)
+  - [Number object methods ↑](#number-object-methods-)
+    - [`Number.isInteger()` ↑](#numberisinteger-)
+    - [`Number.isSafeInteger()` ↑](#numberissafeinteger-)
+    - [`Number.isNaN()` ↑](#numberisnan-)
+    - [`Number.isFinite()` ↑](#numberisfinite-)
+    - [`Number.parseFloat()` ↑](#numberparsefloat-)
+    - [`Number.parseInt()` ↑](#numberparseint-)
 
-## Common
+## Common [↑](#javascript-number-methods)
 
-### `.toString()`
+### `.toString()` [↑](#javascript-number-methods)
 
 - The `toString()` method returns a number as a string.
 
@@ -30,7 +30,7 @@ let x = 123;
 x.toString(); // "123"
 ```
 
-### `.toExponential()`
+### `.toExponential()` [↑](#javascript-number-methods)
 
 - `toExponential()` returns a string, with a number rounded and written using exponential notation.
 
@@ -41,7 +41,7 @@ x.toExponential(4); // "9.6560e+0"
 x.toExponential(6); // "9.656000e+0"
 ```
 
-### `.toFixed()`
+### `.toFixed()` [↑](#javascript-number-methods)
 
 - `toFixed()` returns a string, with the number written with a specified number of decimals.
 
@@ -55,7 +55,7 @@ x.toFixed(6); // "9.656000"
 
 > toFixed(2) is perfect for working with money.
 
-### `.toPrecision()`
+### `.toPrecision()` [↑](#javascript-number-methods)
 
 - `toPrecision()` returns a string, with a number written with a specified length
 
@@ -69,7 +69,7 @@ x.toPrecision(6); // "9.65600"
 
 > The difference between `toFixed` and `toPrecision` is that `toFixed(n)` provides n length after the decimal point; `toPrecision(x)` provides x total length.
 
-### `.valueOf()`
+### `.valueOf()` [↑](#javascript-number-methods)
 
 - `valueOf()` returns a number as a number.
 
@@ -84,9 +84,9 @@ x.valueOf(); // 123
 > The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
 > **There is no reason to use it in your code.**
 
-## Type Conversion
+## Type Conversion [↑](#javascript-number-methods)
 
-### `Number()`
+### `Number()` [↑](#javascript-number-methods)
 
 - `Number()` can be used as a function to convert variables to numbers.
 
@@ -105,7 +105,7 @@ Number(new Date("2023-02-22")); // 1672505600000
 
 > The `Date()` method returns the number of milliseconds since 1.1.1970
 
-### `parseInt()`
+### `parseInt()` [↑](#javascript-number-methods)
 
 - `parseInt()` parses a string and returns an integer.
 
@@ -119,7 +119,7 @@ parseInt("years 10"); // NaN
 
 > If the number cannot be converted, NaN (Not a Number) is returned.
 
-### `parseFloat()`
+### `parseFloat()` [↑](#javascript-number-methods)
 
 - `parseFloat()` parses a string and returns a floating point number.
 
@@ -131,9 +131,9 @@ parseFloat("10 years"); // 10
 parseFloat("years 10"); // NaN
 ```
 
-## Number object methods
+## Number object methods [↑](#javascript-number-methods)
 
-### `Number.isInteger()`
+### `Number.isInteger()` [↑](#javascript-number-methods)
 
 - The Number.isInteger() method returns true if the argument is an integer.
 
@@ -146,7 +146,7 @@ Number.isInteger(10.5); // false
 Number.isInteger("hehe"); // false
 ```
 
-### `Number.isSafeInteger()`
+### `Number.isSafeInteger()` [↑](#javascript-number-methods)
 
 - A safe integer is an integer that can be exactly represented as a double precision number.
 - The Number.isSafeInteger() method returns true if the argument is a safe integer.
@@ -159,7 +159,7 @@ Number.isSafeInteger(12345678901234567890); // false
 > Safe integers are all integers from -(2^53 - 1) to +(2^53 - 1).
 > This is safe: 9007199254740991. This is not safe: 9007199254740992.
 
-### `Number.isNaN()`
+### `Number.isNaN()` [↑](#javascript-number-methods)
 
 - The Number.isNaN() method determines whether a value is NaN or not.
 
@@ -173,7 +173,7 @@ Number.isNaN("true" / 0); // true
 Number.isNaN("true" / "true"); // true
 ```
 
-### `Number.isFinite()`
+### `Number.isFinite()` [↑](#javascript-number-methods)
 
 - The Number.isFinite() method determines whether the passed value is a finite number.
 
@@ -186,7 +186,7 @@ Number.isFinite(-Infinity); // false
 Number.isFinite("0"); // false
 ```
 
-### `Number.parseFloat()`
+### `Number.parseFloat()` [↑](#javascript-number-methods)
 
 - Number.parseFloat() parses a string and returns a number.
 - Spaces are allowed. Only the first number is returned:
@@ -204,6 +204,6 @@ Number.parseFloat("years 10"); // NaN
 > Global methods parseInt() and parseFloat().
 > The purpose is modularization of globals (to make it easier to use the same JavaScript code outside the browser).
 
-### `Number.parseInt()`
+### `Number.parseInt()` [↑](#javascript-number-methods)
 
 - same as [`parseInt()`](#parseint)
