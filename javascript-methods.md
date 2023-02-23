@@ -19,6 +19,15 @@
       - [`.trimStart()` ↑](#trimstart-)
       - [`.trimEnd()` ↑](#trimend-)
     - [String Padding](#string-padding)
+      - [`.padStart()` ↑](#padstart-)
+      - [`.padEnd()` ↑](#padend-)
+    - [Extracting String Characters](#extracting-string-characters)
+      - [`.charAt()` ↑](#charat-)
+      - [`.charCodeAt()` ↑](#charcodeat-)
+    - [Property Access](#property-access)
+      - [`[]` ↑](#-)
+    - [Converting a String to an Array](#converting-a-string-to-an-array)
+      - [`.split()` ↑](#split-)
 
 ## String Methods
 
@@ -197,3 +206,70 @@ let text2 = text1.trimEnd(); // "     Hello World!"
 ```
 
 ### String Padding
+
+#### `.padStart()` [↑](#javascript-methods)
+
+- The padStart() method pads a string with another string from the start, until the resulting string reaches the given length.
+
+```js
+let text = "5";
+let padded = text.padStart(4, "x"); // "xxx5"
+```
+
+#### `.padEnd()` [↑](#javascript-methods)
+
+- The padEnd() method pads a string with another string from the end, until the resulting string reaches the given length.
+
+```js
+let text = "5";
+let padded = text.padEnd(4, "x"); // "5xxx"
+```
+
+### Extracting String Characters
+
+#### `.charAt()` [↑](#javascript-methods)
+
+- The `charAt()` method returns the character at a specified index in a string
+
+```js
+let text = "HELLO WORLD";
+let char = text.charAt(0); // "H"
+```
+
+#### `.charCodeAt()` [↑](#javascript-methods)
+
+- The `charCodeAt()` method returns the unicode of the character at a specified index in a string
+
+```js
+let text = "HELLO WORLD";
+let char = text.charCodeAt(0); // 72
+```
+
+### Property Access
+
+#### `[]` [↑](#javascript-methods)
+
+- You can access the characters of a string like an array
+
+```js
+let text = "HELLO WORLD";
+let char = text[0]; // "H"
+```
+
+> Property access might be a little unpredictable:
+>
+> - It makes strings look like arrays (but they are not)
+> - If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+> - It is read only. str[ 0 ] = "A" gives no error (but does not work!)
+
+### Converting a String to an Array
+
+#### `.split()` [↑](#javascript-methods)
+
+- The `split()` method is used to split a string into an array of substrings, and returns the new array.
+
+```js
+let text = "a,b,c,d,e"; // String
+let textArray = text.split(","); // Split on commas
+// textArray is ["a", "b", "c", "d", "e"]
+```
