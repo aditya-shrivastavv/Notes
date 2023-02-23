@@ -7,6 +7,7 @@
     - [1. `.concat()` ↑](#1-concat-)
     - [2. `.copyWithin()` ↑](#2-copywithin-)
     - [3. `.entries()` ↑](#3-entries-)
+    - [4. `.every()` ↑](#4-every-)
 
 ## Comman
 
@@ -38,9 +39,14 @@ const numbers = [1, 2, 3];
 const characters = ["a", "b", "c"];
 const booleans = [true, false];
 
-console.log(numbers.concat(characters)); // [1, 2, 3, 'a', 'b', 'c']
-console.log(numbers.concat(characters, booleans)); // [1, 2, 3, 'a', 'b', 'c', true, false]
-console.log(numbers.concat(characters, 24, "John", { x: 12, y: 13 })); // [1, 2, 3, 'a', 'b', 'c', 24, 'John', {x: 12, y: 13}]
+console.log(numbers.concat(characters));
+// [1, 2, 3, 'a', 'b', 'c']
+
+console.log(numbers.concat(characters, booleans));
+// [1, 2, 3, 'a', 'b', 'c', true, false]
+
+console.log(numbers.concat(characters, 24, "John", { x: 12, y: 13 }));
+// [1, 2, 3, 'a', 'b', 'c', 24, 'John', {x: 12, y: 13}]
 ```
 
 - Apart from concat() method, you can also spread operator (...) to merge multiple arrays and values into a single array.
@@ -79,13 +85,16 @@ const arr2 = ["a", "b", "c", "d", "e", 1, 2, 3];
 const arr3 = ["a", "b", "c", "d", "e", 1, 2, 3];
 
 // copy elements from index 0 to last index to index 2
-console.log(arr1.copyWithin(2)); // ['a', 'b', 'a', 'b', 'c', 'd', 'e', 1]
+console.log(arr1.copyWithin(2));
+// ['a', 'b', 'a', 'b', 'c', 'd', 'e', 1]
 
 // copy elements from index 4 to last index to index 2
-console.log(arr2.copyWithin(2, 4)); // ['a', 'b', 'e', 1, 2, 3, 'e', 1]
+console.log(arr2.copyWithin(2, 4));
+// ['a', 'b', 'e', 1, 2, 3, 'e', 1]
 
 // copy elements from index 4 to index 6 to index 2
-console.log(arr3.copyWithin(2, 4, 6)); // ['a', 'b', 'e', 1, 'e', 1, 2, 3]
+console.log(arr3.copyWithin(2, 4, 6));
+// ['a', 'b', 'e', 1, 'e', 1, 2, 3]
 ```
 
 > When you use the negative index, the method starts counting from the end of the array. i.e -1 is the last index, -2 is the second last index, and so on.
@@ -110,13 +119,49 @@ Here the entries() method does not take any argument.
 ```js
 const arr = ["a", "b", "c", "d", "e"];
 const iterator1 = arr.entries();
-console.log(iterator1.next());
-console.log(iterator1.next().value);
-console.log(iterator1.next().value);
+console.log(iterator1.next()); // { value: [0, 'a'], done: false }
+console.log(iterator1.next().value); // [1, 'b']
+console.log(iterator1.next().value); // [2, 'c']
 
 // using for...of loop
 const iterator2 = arr.entries();
 for (const [index, value] of iterator2) {
   console.log(index, value);
 }
+// 0, a
+// 1, b
+// 2, c
+// 3, d
+// 4, e
+```
+
+### 4. `.every()` [↑](#28-javascript-array-methods)
+
+The `every()` method in javascript executes a function for each element in the array and returns true if the function returns true for all elements.
+
+- The original array is not modified by this method.
+
+**Syntax**:
+
+```js
+arr.every(callback(currentValue, index, arr), thisArg);
+```
+
+- You can define the callback function within the method or you can define it outside the method.
+
+- The callback function takes three arguments:
+  - `currentValue`: defines the current element in the array.
+  - `index` (optional): defines the index of the current element in the array.
+  - `arr` (optional): defines the array.
+
+```js
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [22, 42, 86, 100, 4];
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+console.log(arr1.every(isEven)); // false
+console.log(arr2.every(isEven)); // true
 ```
