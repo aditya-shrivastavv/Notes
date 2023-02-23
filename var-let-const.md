@@ -4,7 +4,7 @@ what's the difference between `var`, `let` and `const`?
 
 - [var, let \& const](#var-let--const)
   - [`var` ↑](#var-)
-    - [`var` the **PROBLEM** ↑](#var-the-problem-)
+    - [`var` the **PROBLEM maybe ?** ↑](#var-the-problem-maybe--)
   - [`let` ↑](#let-)
   - [`const` ↑](#const-)
 
@@ -44,7 +44,7 @@ console.log(greet); // undefined
 var greet = "say hi";
 ```
 
-### `var` the **PROBLEM** [↑](#var-let--const)
+### `var` the **PROBLEM maybe ?** [↑](#var-let--const)
 
 - var is not block scoped, its only **function** scoped
 
@@ -55,6 +55,8 @@ if (true) {
 }
 console.log(greet); // "say Hello instead" // PROBLEM
 ```
+
+- this thing can be usefull in some cases where we want to use the variable in the whole function scope.
 
 ## `let` [↑](#var-let--const)
 
