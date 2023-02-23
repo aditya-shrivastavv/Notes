@@ -18,6 +18,7 @@
     - [`.trim()` ↑](#trim-)
     - [`.trimStart()` ↑](#trimstart-)
     - [`.trimEnd()` ↑](#trimend-)
+    - [`.repeat()` ↑](#repeat-)
   - [String Padding](#string-padding)
     - [`.padStart()` ↑](#padstart-)
     - [`.padEnd()` ↑](#padend-)
@@ -203,6 +204,15 @@ let text2 = text1.trimStart(); // "Hello World!     "
 ```js
 let text1 = "     Hello World!     ";
 let text2 = text1.trimEnd(); // "     Hello World!"
+```
+
+### `.repeat()` [↑](#javascript-string-methods)
+
+- The `repeat()` method returns a new string with a specified number of copies of the string it was called on.
+
+```js
+let text = "Hello";
+let repeated = text.repeat(3); // "HelloHelloHello"
 ```
 
 ## String Padding
