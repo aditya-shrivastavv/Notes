@@ -43,3 +43,4 @@
    - if null or undefind: equal
    - if non primitive: ToPrimitive
    - prefers: toNumber
+10. if we try to assign a value to an undeclared variable that variable gets declared automatically into the global scope. This is known as Dynamic Global Variables. You should never use it though, cause it might unknowingly pollutes the global scope.

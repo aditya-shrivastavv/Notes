@@ -72,7 +72,7 @@ const myFunction = () => {
 const myFunction = (a, b) => a + b;
 ```
 
-- Arrow functions can be named or anonymous.
+- Arrow functions are always anonymous.
 - Arrow functions are always in expression form.
 
 They take `this` from the surrounding scope and cannot make their own `this`.
