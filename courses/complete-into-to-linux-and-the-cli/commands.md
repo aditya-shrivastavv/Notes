@@ -21,9 +21,31 @@
   - list directory contents
   - `ls =path=`
     - to list contents of a directory of a certain path
+  - `ls --ignore=*.txt`
+    - ignore all files with .txt extension
+    - short of --ignore is -I
+  - `ls -l`
+    - long form output
+  - `ls -a`
+    - show hidden files
+  - `ls -lsah`
+    - power weapon
 - `which =command=`
   - where is the command located i am running
 - `echo =hi=`
   - print a string to the terminal
 - `=anything= --help`
   - get help for a command
+
+> --=something= is called a flag
+> there are generally two types of writing flags -short and --long way
+
+## Intermediate
+
+> Use arrow keys to navigate through the history of commands and tab to autocomplete
+
+- Reverse Search
+  - `ctrl + r`
+    - search through history of commands
+    - continue to press `ctrl + r` to go through the deep history
+    - hit arrow to paste the command in the terminal to be editable

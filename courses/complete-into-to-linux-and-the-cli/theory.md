@@ -7,3 +7,4 @@ For theory just refer to -
 ## Notes
 
 - `BASH` stands for **Bourne Again Shell**
+- The commands you run on the CLI are saved so, be careful when running commands with sensitive information.
