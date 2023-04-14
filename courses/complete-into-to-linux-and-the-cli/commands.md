@@ -6,6 +6,7 @@
   - print current working directory
 - `clear`
   - clear the terminal
+  - `ctrl + l` also works
 - `cd`
   - change directory
   - `cd ..`
@@ -49,3 +50,17 @@
     - search through history of commands
     - continue to press `ctrl + r` to go through the deep history
     - hit arrow to paste the command in the terminal to be editable
+- Bash History
+  - `tail ~/.bash_history`
+    - view the history of commands
+    - tail outputs the last 10 lines of a file
+- Copy and Paste
+  - ctrl + c and ctrl + v have different functions in the terminal
+  - `ctrl + shift + c`
+    - copy
+  - `ctrl + shift + v`
+    - paste
+- `!!`
+  - runs the last command
+- `yes`
+  - spams the terminal with yes
