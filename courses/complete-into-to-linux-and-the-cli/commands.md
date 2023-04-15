@@ -31,6 +31,10 @@
     - show hidden files
   - `ls -lsah`
     - power weapon
+- `mkdir =directoryname=`
+  - make directory (folder)
+  - `mkdir -p =directoryname=/=nesteddir=/=nesteddir2=`
+    - make nested directories
 - `which =command=`
   - where is the command located i am running
 - `echo =hi=`
@@ -64,3 +68,29 @@
   - runs the last command
 - `yes`
   - spams the terminal with yes
+
+## Interacting with Files
+
+- `less =filename=`
+  - read the file. writting cannot be done
+  - hit `q` to quit
+  - it is good for long files.
+- `more =filename=`
+  - it is similar to less but it is not as good
+- `man =programname=`
+  - show the manual of a program in depth.
+  - if you want in depth guide use man, or use --help for a quick guide
+- `cat =filename=`
+  - also used for reading files
+- `tail =filename=`
+  - show the last 10 lines of a file
+  - `tail -n =number= =filename=`
+    - show the last =number= lines of a file
+  - `tail -f =filename=`
+    - show the last 10 lines of a file and keep updating as the file is updated
+    - `ctrl + c` to quit
+- `head =filename=`
+  - vice versa of tail
+  - show the first 10 lines of a file
+  - `head -n =number= =filename=`
+    - show the first =number= lines of a file
