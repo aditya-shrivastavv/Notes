@@ -35,6 +35,23 @@
   - make directory (folder)
   - `mkdir -p =directoryname=/=nesteddir=/=nesteddir2=`
     - make nested directories
+- `touch =filename=`
+  - create a file if it does not exist
+  - if the file exists, it updates the timestamp (modification time) nothing else.
+- `rm =filename=`
+  - remove a file
+  - `rm -r =directoryname=`
+    - remove a directory
+  - `rm -rf =directoryname=`
+    - remove a directory and all its contents
+- `cp =filename= =newfilename=`
+  - copy a file
+  - `cp -r =directoryname= =newdirectoryname=`
+    - copy a directory
+- `mv =filename= =newfilename=`
+  - rename a file
+  - `mv =filename= =directoryname=`
+    - move a file to a directory
 - `which =command=`
   - where is the command located i am running
 - `echo =hi=`
@@ -68,6 +85,14 @@
   - runs the last command
 - `yes`
   - spams the terminal with yes
+- `tar -cf =filename.tar= =multipleFilesAndFolders=`
+  - .tar file is like .zip file or .rar file
+  - zip and rar file are somewhat compressed but tar is not compressed
+  - `tar -zcf filename.tar.gz =multipleFilesAndFolders=`
+    - for compression
+  - `tar -xzf =filename.tar.gz= -C =directoryname=`
+    - extract the tar file to a directory
+    - -C flag is used to specify the directory, if not specified it will extract to the current directory
 
 ## Interacting with Files
 
