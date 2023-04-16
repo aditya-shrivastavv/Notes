@@ -5,7 +5,7 @@
 1. Grid Layout generally looks very organised and sorted.
 2. Symmetry is soothing to the brain.
    - Asymmetry in a Symmetrical Layout is a good way to break the monotony and grab atention.
-   - ggSymmetry everywhere is boring.
+   - Symmetry everywhere is boring.
 3. Asymmetry can be hard to balance out things.
 4. The [course slides](https://github.com/sdras/design-for-developers/tree/master/slides-pdf) contain some of the greatest examples
 5. Imperfection in beauty looks amazing if done right.
