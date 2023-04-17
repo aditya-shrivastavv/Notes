@@ -24,7 +24,6 @@ cd
       # go to root directory
     cd -
       # go to previous directory
-
 ```
 
 > slash compares to root directory, for relative path use `cd =name=`
@@ -123,22 +122,31 @@ echo =string=
     - copy
   - `ctrl + shift + v`
     - paste
-- `!!`
-  - runs the last command
-- `yes`
-  - spams the terminal with yes
-  - `yes y` or `yes n` or `yes =anything=`
-    - spams the terminal with =anything=
-- `tar -cf =filename.tar= =multipleFilesAndFolders=`
-  - .tar file is like .zip file or .rar file
-  - zip and rar file are somewhat compressed but tar is not compressed
-  - `tar -zcf filename.tar.gz =multipleFilesAndFolders=`
-    - for compression
-  - `tar -xzf =filename.tar.gz= -C =directoryname=`
-    - extract the tar file to a directory
-    - -C flag is used to specify the directory, if not specified it will extract to the current directory
-  - `&`
-    - & is used at the end of the command and it takes the process to the backgroud
+
+```bash
+!!
+  # runs the last command
+```
+
+```bash
+yes
+  # spams the terminal with yes
+    `yes y` or `yes n` or `yes =anything=`
+      # spams the terminal with =anything=
+```
+
+```bash
+tar -cf =filename.tar= =multipleFilesAndFolders=
+  # .tar file is like .zip file or .rar file
+  # zip and rar file are somewhat compressed but tar is not compressed
+    tar -zcf filename.tar.gz =multipleFilesAndFolders=
+      # for compression
+    tar -xzf =filename.tar.gz= -C =directoryname=
+      # extract the tar file to a directory
+```
+
+> `-C` flag is used to specify the directory, if not specified it will extract to the current directory
+> `&` is used at the end of the command and it takes the process to the background
 
 ## Advanced
 
