@@ -26,6 +26,7 @@ If you understand the standard output of any program you can redirect it to anyt
 
 - `1>` redirects the stdout (standard output)
 - `1>>` redirects the stdout (standard output) and appends it to the file
+- `>`, `>>` goes to the file, if the file does not exist, it creates it.
 
 ## Standard Error (stderr)
 
@@ -59,8 +60,9 @@ ls -lash 2> /dev/null
 ```bash
 - `grep 'some text' < file.txt`
 # Prints the lines that contain 'some text'
-# grep is a command that searches for a pattern in a file
 ```
+
+grep is a command that searches for a pattern in a file
 
 ### Example
 
@@ -71,3 +73,10 @@ grep 'some-text` < file.txt 1> grepout.txt 2> /dev/null
 grep finds 'some-text' in file.txt and redirects the output to grepout.txt and ignores the errors. so simple right?
 
 ## Pipes
+
+Use to connect the output of one command to the input of another command. Can be used in chain.
+
+```bash
+cat file.txt | grep 'some text'
+# file.txt is the input for grep
+```

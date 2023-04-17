@@ -86,6 +86,8 @@
   - runs the last command
 - `yes`
   - spams the terminal with yes
+  - `yes y` or `yes n` or `yes =anything=`
+    - spams the terminal with =anything=
 - `tar -cf =filename.tar= =multipleFilesAndFolders=`
   - .tar file is like .zip file or .rar file
   - zip and rar file are somewhat compressed but tar is not compressed
@@ -94,6 +96,15 @@
   - `tar -xzf =filename.tar.gz= -C =directoryname=`
     - extract the tar file to a directory
     - -C flag is used to specify the directory, if not specified it will extract to the current directory
+  - `&`
+    - & is used at the end of the command and it takes the process to the backgroud
+
+## Advanced
+
+```bash
+ps aux
+# list all currently running processes (ps = process status)
+```
 
 ## Wildcards
 
