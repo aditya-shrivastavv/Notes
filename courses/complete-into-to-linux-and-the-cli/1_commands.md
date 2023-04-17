@@ -96,6 +96,11 @@ echo =string=
 > string can be with or without quotes, sometimes quotes are needed
 
 ```bash
+whoami
+  # print the current user
+```
+
+```bash
 =anything= --help
   # get help for a command
 ```
