@@ -2,63 +2,104 @@
 
 ## Basic
 
-- `pwd`
-  - print current working directory
-- `clear`
-  - clear the terminal
-  - `ctrl + l` also works
-- `cd`
-  - change directory
-  - `cd ..`
-    - go up one directory
-  - `cd ~`
-    - go to home directory
-  - `cd /`
-    - go to root directory
-  - `cd -`
-    - go to previous directory
-  - slash compares to root directory, for relative path, use `cd =name=`
-- `ls`
-  - list directory contents
-  - `ls =path=`
-    - to list contents of a directory of a certain path
-  - `ls --ignore=*.txt`
-    - ignore all files with .txt extension
-    - short of --ignore is -I
-  - `ls -l`
-    - long form output
-  - `ls -a`
-    - show hidden files
-  - `ls -lsah`
-    - power weapon
-- `mkdir =directoryname=`
-  - make directory (folder)
-  - `mkdir -p =directoryname=/=nesteddir=/=nesteddir2=`
-    - make nested directories
-- `touch =filename=`
-  - create a file if it does not exist
-  - if the file exists, it updates the timestamp (modification time) nothing else.
-  - multiple files can be given
-- `rm =filename=`
-  - remove a file
-  - `rm -r =directoryname=`
-    - remove a directory
-  - `rm -rf =directoryname=`
-    - remove a directory and all its contents
-- `cp =filename= =newfilename=`
-  - copy a file
-  - `cp -r =directoryname= =newdirectoryname=`
-    - copy a directory
-- `mv =filename= =newfilename=`
-  - rename a file
-  - `mv =filename= =directoryname=`
-    - move a file to a directory
-- `which =command=`
-  - where is the command located i am running
-- `echo =hi=`
-  - print a string to the terminal
-- `=anything= --help`
-  - get help for a command
+```bash
+pwd
+  # print current working directory
+```
+
+```bash
+clear
+  # clear the terminal
+  # `ctrl + l` also works
+```
+
+```bash
+cd
+  # change directory
+    cd ..
+      # go up one directory
+    cd ~
+      # go to home directory
+    cd /
+      # go to root directory
+    cd -
+      # go to previous directory
+
+```
+
+> slash compares to root directory, for relative path use `cd =name=`
+
+```bash
+ls
+  # list directory contents
+    ls =path=
+      # to list contents of a directory of a certain path
+    ls --ignore=*.txt
+      # ignore all files with .txt extension
+      # short of --ignore is -I
+    ls -l
+      # long form output
+    ls -a
+      # show hidden files
+    ls -lsah
+      # power weapon
+```
+
+```bash
+mkdir =directoryname=
+  # make directory (folder)
+    mkdir -p =directoryname= / =nesteddir= / =nesteddir2=
+      # make nested directories
+```
+
+```bash
+touch =filename=
+  # create a file if it does not exist
+  # if the file exists, it updates the timestamp (modification time) nothing else.
+  # multiple files can be given
+```
+
+```bash
+rm =filename=
+  # remove a file
+    rm -r =directoryname=
+      # remove a directory
+    rm -rf =directoryname=
+      # remove a directory and all its contents
+```
+
+> `r` stands for recursive
+
+```bash
+cp =filename= =newfilename=
+  # copy a file
+    cp -r =directoryname= =newdirectoryname=
+      # copy a directory
+```
+
+```bash
+mv =filename= =newfilename=
+  # rename a file
+    mv =filename= =directoryname=
+      # move a file to a directory
+```
+
+```bash
+which =command=
+  # where is the command located i am running
+```
+
+```bash
+echo =string=
+  # print a string to the terminal
+```
+
+> string can be with or without quotes, sometimes quotes are needed
+
+```bash
+=anything= --help
+  # get help for a command
+```
 
 > --=something= is called a flag
 > there are generally two types of writing flags -short and --long way
