@@ -28,3 +28,11 @@ Book: [Making and Breaking the Grids](https://a.co/d/5NGWnF9)
 1. Photoshop
 2. Illustrator
 3. Sketch
+
+> [Grid by Examples](https://gridbyexample.com/)
+
+> [Experimental Layouts Lab](https://labs.jensimmons.com/)
+
+> [CSS Grid Generator](https://cssgrid-generator.netlify.app/)
+
+> [CSS Clip Path Maker](https://bennettfeely.com/clippy/)
