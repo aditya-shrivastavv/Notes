@@ -3,141 +3,183 @@
 ## Basic
 
 ```bash
+# print current working directory
 pwd
-  # print current working directory
 ```
 
 ```bash
+# clear the terminal
 clear
-  # clear the terminal
-  # `ctrl + l` also works
 ```
 
+> `ctrl + l` can also be used for clearing the screen
+
 ```bash
+# change directory
 cd
-  # change directory
-    cd ..
-      # go up one directory
-    cd ~
-      # go to home directory
-    cd /
-      # go to root directory
-    cd -
-      # go to previous directory
+
+# go up one directory
+cd ..
+
+# go to home directory
+cd ~
+
+# go to root directory
+cd /
+
+# go to previous directory
+cd -
 ```
 
-> slash compares to root directory, for relative path use `cd =name=`
+> slash compares to root directory, for relative path use `cd <name>`
 
 ```bash
+# list directory contents
 ls
-  # list directory contents
-    ls =path=
-      # to list contents of a directory of a certain path
-    ls --ignore=*.txt
-      # ignore all files with .txt extension
-      # short of --ignore is -I
-    ls -l
-      # long form output
-    ls -a
-      # show hidden files
-    ls -lsah
-      # power weapon
+
+# to list contents of a directory of a certain path
+ls <path>
+
+# ignore all files with .txt extension
+ls --ignore=*.txt
+
+# 🔴 short of --ignore is -I
+
+# long form output
+ls -l
+
+# show hidden files
+ls -a
+
+# power weapon
+ls -lsah
 ```
 
 ```bash
-mkdir =directoryname=
-  # make directory (folder)
-    mkdir -p =directoryname= / =nesteddir= / =nesteddir2=
-      # make nested directories
+# make directory (folder)
+mkdir <directoryname>
+
+# make nested directories
+mkdir -p <directoryname> / <nesteddir> / <nesteddir2>
 ```
 
 ```bash
-touch =filename=
-  # create a file if it does not exist
-  # if the file exists, it updates the timestamp (modification time) nothing else.
-  # multiple files can be given
+# create a file if it does not exist
+touch <filename>
+
+# 🔴 multiple files can be given
+```
+
+> if the file exists, it updates just updates the modification time.
+
+```bash
+# remove a file
+rm <filename>
+
+# remove a directory
+rm -r <directoryname>
+
+# remove a directory and all its contents
+rm -rf <directoryname>
+```
+
+> `r` stands for recursive and `f` stands for force.
+
+```bash
+# copy a file
+cp <filename> <newfilename>
+
+# copy a directory
+cp -r <directoryname> <newdirectoryname>
+```
+
+> Files can also be copied with cat command, see [streams.md](./2_streams.md)
+
+```bash
+# move a file to a directory
+mv <fileName> <directoryName>
+
+# rename a file
+mv <fileName> <newFileName>
 ```
 
 ```bash
-rm =filename=
-  # remove a file
-    rm -r =directoryname=
-      # remove a directory
-    rm -rf =directoryname=
-      # remove a directory and all its contents
-```
-
-> `r` stands for recursive
-
-```bash
-cp =filename= =newfilename=
-  # copy a file
-    cp -r =directoryname= =newdirectoryname=
-      # copy a directory
+# where is the command stored
+which <command>
 ```
 
 ```bash
-mv =filename= =newfilename=
-  # rename a file
-    mv =filename= =directoryname=
-      # move a file to a directory
+# print a string to the terminal
+echo <string>
 ```
 
-```bash
-which =command=
-  # where is the command located i am running
-```
+> string given to `echo` can be with or without quotes, if there are no variables (`$VARIABLE`) in the string, it is recommended to use quotes.
 
 ```bash
-echo =string=
-  # print a string to the terminal
-```
-
-> string can be with or without quotes, sometimes quotes are needed
-
-```bash
+# print the current user
 whoami
-  # print the current user
 ```
 
 ```bash
-=anything= --help
+<anyCommand> --help
   # get help for a command
 ```
 
-> --=something= is called a flag
+> Anything after `-` or `--` is called an option or a flag
+
 > there are generally two types of writing flags -short and --long way
 
 ## Intermediate
 
 > Use arrow keys to navigate through the history of commands and tab to autocomplete
 
-- Reverse Search
-  - `ctrl + r`
-    - search through history of commands
-    - continue to press `ctrl + r` to go through the deep history
-    - hit arrow to paste the command in the terminal to be editable
-- Bash History
-  - `tail ~/.bash_history`
-    - view the history of commands
-    - tail outputs the last 10 lines of a file
-- Copy and Paste
-  - ctrl + c and ctrl + v have different functions in the terminal
-  - `ctrl + shift + c`
-    - copy
-  - `ctrl + shift + v`
-    - paste
+#### Reverse Search
+
+- `ctrl + r`
+  - search through history of commands
+  - continue to press `ctrl + r` to go through the deep history
+  - hit arrow to paste the command in the terminal to be editable
+
+#### Bash History
+
+- `tail ~/.bash_history`
+  - view the history of commands
+  - tail outputs the last 10 lines of a file
+
+#### Copy and Paste
+
+- ctrl + c and ctrl + v have different functions in the terminal
+- `ctrl + shift + c`
+  - copy
+- `ctrl + shift + v`
+  - paste
+
+---
 
 ```bash
+# run the last command
 !!
-  # runs the last command
 ```
 
 ```bash
+# spams the terminal with 'yes'
 yes
-  # spams the terminal with yes
-    `yes y` or `yes n` or `yes =anything=`
-      # spams the terminal with =anything=
+
+# spams with 'y'
+yes y
+
+# spams with 'n'
+yes n
+
+# spams with 'anything'
+yes <anything>
+```
+
+## Advanced
+
+```bash
+ps aux
+# list all currently running processes (ps = process status)
 ```
 
 ```bash
@@ -152,13 +194,6 @@ tar -cf =filename.tar= =multipleFilesAndFolders=
 
 > `-C` flag is used to specify the directory, if not specified it will extract to the current directory
 > `&` is used at the end of the command and it takes the process to the background
-
-## Advanced
-
-```bash
-ps aux
-# list all currently running processes (ps = process status)
-```
 
 ## Wildcards
 
