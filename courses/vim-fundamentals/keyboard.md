@@ -9,3 +9,7 @@
 - `b`
   - inverse of w
   - to jump to the previous word like `ctrl + left arrow`
+- `dd`
+  - to delete a line
+- `u`
+  - for undo
